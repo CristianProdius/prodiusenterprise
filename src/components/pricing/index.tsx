@@ -2,7 +2,6 @@
 import { CheckIcon } from "@/icons/check";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-import { text } from "stream/consumers";
 
 const pricingTiers = [
   {

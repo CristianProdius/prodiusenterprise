@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
+
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MdConveyorBelt } from "react-icons/md";
-import { FaDatabase, FaPeopleGroup, FaUserTie } from "react-icons/fa6";
+import { FaDatabase, FaUserTie } from "react-icons/fa6";
 import { AiOutlineFileSearch } from "react-icons/ai";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { GiMoneyStack } from "react-icons/gi";

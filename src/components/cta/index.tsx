@@ -1,13 +1,10 @@
 "use client";
 import { ArrowRight } from "@/icons/arrow-right";
-import Image from "next/image";
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-type Props = {};
-
-const CallToAction = (props: Props) => {
+const CallToAction = () => {
   const ctaRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ctaRef,

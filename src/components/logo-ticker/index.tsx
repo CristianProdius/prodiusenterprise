@@ -3,9 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-const LogoTicker = (props: Props) => {
+const LogoTicker = () => {
   return (
     <div className="py-8 bg-white md:py-12">
       <div className="md:flex md:flex-row justify-between items-center max-w-[1240px] mx-auto px-4 ">

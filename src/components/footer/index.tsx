@@ -1,14 +1,11 @@
 import { SocialInstaIcon } from "@/icons/social-insta";
 import { SocialLinkedInIcon } from "@/icons/social-linkedin";
-import { SocialPinIcon } from "@/icons/social-pin";
 import { SocialXIcon } from "@/icons/social-x";
 import { SocialYouTubeIcon } from "@/icons/social-youtube";
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <footer className="bg-black text-[#bcbcbc] text-sm py-10 text-center">
       <div className="max-w-[1240px] mx-auto px-4">
