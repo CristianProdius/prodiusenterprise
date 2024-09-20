@@ -12,7 +12,7 @@ const Footer = (props: Props) => {
   return (
     <footer className="bg-black text-[#bcbcbc] text-sm py-10 text-center">
       <div className="max-w-[1240px] mx-auto px-4">
-        <div className="inline-flex relative before:content-[''] before:top-2 before:bottom-0 before:w-full before:blur before:bg-[linear-gradient(to_right,#f87bff,#fb92cf,#ffdd9b,#c2f0b1,#2fd8fe)] before:absolute">
+        <div className="inline-flex relative ">
           <Image
             src="/logosaas.png"
             width={40}
@@ -30,11 +30,19 @@ const Footer = (props: Props) => {
           <a href="#">Careers</a>
         </nav>
         <div className="flex justify-center gap-6 mt-6">
-          <SocialInstaIcon className="w-6 h-6" />
-          <SocialLinkedInIcon className="w-6 h-6" />
-          <SocialPinIcon className="w-6 h-6" />
-          <SocialXIcon className="w-6 h-6" />
-          <SocialYouTubeIcon className="w-6 h-6" />
+          <a href="" className="cursor:pointer">
+            <SocialInstaIcon className="w-6 h-6" />
+          </a>
+          <a href="">
+            <SocialLinkedInIcon className="w-6 h-6" />
+          </a>
+          {/*<SocialPinIcon className="w-6 h-6" />*/}
+          <a href="">
+            <SocialXIcon className="w-6 h-6" />
+          </a>
+          <a href="">
+            <SocialYouTubeIcon className="w-6 h-6" />
+          </a>
         </div>
         <p className="mt-6 ">
           &copy; 2024 Prodius Enterprise, LLC. All rights reserved.

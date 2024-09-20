@@ -1,54 +1,55 @@
+"use client";
 import { CheckIcon } from "@/icons/check";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
+import { text } from "stream/consumers";
 
 const pricingTiers = [
   {
-    title: "Free",
+    title: "Free Plan",
     monthlyPrice: 0,
     buttonText: "Get started for free",
     popular: false,
     inverse: false,
     features: [
-      "Up to 5 project members",
-      "Unlimited tasks and projects",
-      "2GB storage",
-      "Integrations",
-      "Basic support",
+      "One-time 30-minute consultation meeting",
+      "Assessment of current processes",
+      "Recommendations for potential automation improvements",
+      "Basic automation roadmap",
     ],
   },
   {
-    title: "Pro",
-    monthlyPrice: 9,
+    title: "Pro Plan",
+    monthlyPrice: 1499,
     buttonText: "Sign up now",
     popular: true,
     inverse: true,
     features: [
-      "Up to 50 project members",
-      "Unlimited tasks and projects",
-      "50GB storage",
-      "Integrations",
-      "Priority support",
-      "Advanced support",
-      "Export support",
+      "Everything in Free Plan",
+      "Custom automation solution for one key business process",
+      "Solution designed for up to 50 employees or 5 departments",
+      "Implementation and integration support",
+      "3 months of post-implementation support",
+      "Quarterly performance review",
+      "8 hours of training for your team",
     ],
   },
   {
-    title: "Business",
-    monthlyPrice: 19,
+    title: "Business Plan",
+    monthlyPrice: 3999,
     buttonText: "Sign up now",
     popular: false,
     inverse: false,
     features: [
-      "Up to 5 project members",
-      "Unlimited tasks and projects",
-      "200GB storage",
-      "Integrations",
+      "Everything in Pro Plan",
+      "Custom automation solutions for up to 3 business processes",
+      "Solutions designed for up to 200 employees or 15 departments",
+      "Priority implementation and support",
+      "6 months of post-implementation support",
+      "Monthly performance reviews and optimizationr",
+      "20 hours of training for your team",
       "Dedicated account manager",
-      "Custom fields",
-      "Advanced analytics",
-      "Export capabilities",
-      "API access",
-      "Advanced security features",
+      "API access for further customization",
     ],
   },
 ];
@@ -60,8 +61,8 @@ export const Pricing = () => {
         <div className="max-w-[540px] mx-auto">
           <h2 className="section-title">Pricing</h2>
           <p className="section-description mt-5">
-            Free foreeve. Upgrade for unliomited tasks, better security, and
-            exclusive features.
+            Free foreeve. Upgrade for unliomited automation, better security,
+            and exclusive features.
           </p>
         </div>
         <div className="flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center">
@@ -92,9 +93,18 @@ export const Pricing = () => {
                   </h3>
                   {popular && (
                     <div className="inline-flex text-sm px-4 py-1.5 rounded-xl border border-white/20">
-                      <span className="bg-[linear-gradient(to_right,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDF)] text-transparent bg-clip-text font-medium">
+                      <motion.span
+                        animate={{ backgroundPositionX: "100%" }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 1,
+                          ease: "linear",
+                          repeatType: "loop",
+                        }}
+                        className="bg-[linear-gradient(to_right,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF)] [background-size:200%] text-transparent bg-clip-text font-medium"
+                      >
                         Popular
-                      </span>
+                      </motion.span>
                     </div>
                   )}
                 </div>
@@ -102,7 +112,12 @@ export const Pricing = () => {
                   <span className="text-4xl font-bold tracking-tighter leading-none">
                     ${monthlyPrice}
                   </span>
-                  <span className="tracking-tight font-bold text-black/50">
+                  <span
+                    className={twMerge(
+                      "tracking-tight font-bold text-black/50",
+                      inverse === true && "text-white/50"
+                    )}
+                  >
                     /month
                   </span>
                 </div>

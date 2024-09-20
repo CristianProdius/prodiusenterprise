@@ -1,14 +1,22 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { ArrowRight } from "@/icons/arrow-right";
 import Image from "next/image";
 import { MenuIcon } from "@/icons/menu";
+import { IoMdClose } from "react-icons/io";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="sticky top-0 backdrop-blur-sm z-20">
       <div className="flex justify-center items-center py-3 bg-black text-white text-sm gap-3">
         <p className="text-white/60 hidden md:block ">
-          Streamline your workflow and bost your productivity
+          Streamline your operations with automated workflows
         </p>
         <div className="inline-flex gap-1 items-center">
           <p>Get Started for Free</p>
@@ -19,8 +27,14 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <Image src={"/logosaas.png"} alt="logo" width={40} height={40} />
-            <MenuIcon className="h-5 w-5 md:hidden" />
-            <nav className="hidden md:flex gap-6 text-black/60 items-center">
+            <button onClick={toggleMenu} className="md:hidden">
+              {isMenuOpen ? (
+                <IoMdClose className="h-5 w-5" />
+              ) : (
+                <MenuIcon className="h-5 w-5" />
+              )}
+            </button>
+            <nav className="hidden  md:flex gap-6 text-black/60 items-center">
               <a href="#">About</a>
               <a href="#">Features</a>
               <a href="#">Customers</a>
@@ -33,6 +47,30 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {isMenuOpen && (
+        <div className="md:hidden bg-[#eaeefe]  absolute top-full left-0 right-0 shadow-lg">
+          <nav className="flex flex-col gap-4 p-4">
+            <a href="#" className="text-black/60">
+              About
+            </a>
+            <a href="#" className="text-black/60">
+              Features
+            </a>
+            <a href="#" className="text-black/60">
+              Customers
+            </a>
+            <a href="#" className="text-black/60">
+              Updates
+            </a>
+            <a href="#" className="text-black/60">
+              Help
+            </a>
+            <button className="bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex align-items justify-center tracking-tight">
+              Get for Free
+            </button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
