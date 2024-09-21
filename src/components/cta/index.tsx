@@ -40,7 +40,12 @@ const CallToAction = () => {
           />
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-          <button className="btn btn-primary">Try for free</button>
+          <button className="btn btn-primary">
+            {" "}
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1F91xznzUhBkpCQak88DLvKICPz-8kGt5hYoIyUAWeP5l28agyectfbtO-aHmZwCGE6acPIcEb">
+              Get for Free
+            </a>
+          </button>
           <button className="btn btn-text gap-1">
             <span>Learn more</span>
             <ArrowRight className="h-5 w-5" />

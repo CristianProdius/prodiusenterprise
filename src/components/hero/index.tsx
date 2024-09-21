@@ -28,7 +28,12 @@ const Hero = () => {
             potential with our intelligent automation solutions.
           </p>
           <div className="flex gap-1 items-center mt-[30px]">
-            <button className="btn btn-primary">Try for free</button>
+            <button className="btn btn-primary">
+              {" "}
+              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1F91xznzUhBkpCQak88DLvKICPz-8kGt5hYoIyUAWeP5l28agyectfbtO-aHmZwCGE6acPIcEb">
+                Get in Contact
+              </a>
+            </button>
             <div className="flex items-center gap-1">
               <button className="btn btn-text">
                 <span>Learn more</span>
